@@ -1,1 +1,1 @@
- web: sh setup.sh && uvicorn api.fast:app --reload
+ web: uvicorn api.fast:app --reload
