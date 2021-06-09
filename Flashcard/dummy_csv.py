@@ -4,7 +4,7 @@ import random
 
 def create_dummy_csv():
     # csv header
-    fieldnames = ['vocab', 'desc_en', 'desc_jp', 'desc_ch']
+    fieldnames = ['item_id', 'word-jp', 'word-en', 'word-zh']
 
     # csv data
     rows = [{
@@ -25,17 +25,17 @@ def create_dummy_csv():
         writer.writerows(rows)
 
 def random_keyword():
-    with open('text.csv', newline='') as csvfile:
+    with open('test_flashcards.csv', newline='') as csvfile:
         reader = csv.reader(csvfile, delimiter=',', quotechar='|')
         db_list = []
         next(reader)
         for row in reader:
             print(row)
             key_dic = {}
-            key_dic['vocab']   = row[0]
-            key_dic['desc_en'] = row[1]
-            key_dic['desc_jp'] = row[2]
-            key_dic['desc_ch'] = row[3]
+            key_dic['item_id'] = row[0]
+            key_dic['word-jp'] = row[1]
+            key_dic['word-en'] = row[2]
+            key_dic['word-zh'] = row[3]
             db_list.append(key_dic)
 
     return db_list[random.randrange(0, len(db_list))]
