@@ -35,7 +35,6 @@ def random_keyword():
             key_dic['item_id'] = row[0]
             key_dic['word-jp'] = row[1]
             key_dic['word-en'] = row[2]
-            key_dic['word-zh'] = row[3]
             db_list.append(key_dic)
 
     return db_list[random.randrange(0, len(db_list))]
@@ -121,7 +120,6 @@ def lookup_keyword():
                 key_dic['item_id'] = row[0]
                 key_dic['word-jp'] = row[1]
                 key_dic['word-en'] = row[2]
-                key_dic['word-zh'] = row[3]
                 db_list.append(key_dic)
 
     return db_list[0]
